@@ -164,6 +164,13 @@
 	// 사용자가 할일을 등록헀을때 
 	$(".input-form").submit(function(event){
 		event.preventDefault();
+		var input = $(".input").val(); 
+		
+		if(input.trim() == ""){
+			alert('공백입니다.');
+			return;
+		}
+
 		$.ajax({
             url:'/api/todos',
             type:'POST',
